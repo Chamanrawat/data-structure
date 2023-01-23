@@ -258,6 +258,65 @@ int delateelement(int arr[], int index)
 }
 
 
+ARRAY ME SORTING IN ACENDING 
+
+
+#include <stdio.h>
+#define SIZE 100
+void printArray(int []);
+void sortingArray(int []);
+
+int n;
+int main()
+{
+   int arr[SIZE],i,sorting;
+   printf("How many element you want to store in array : ");
+   scanf("%d", &n);
+   
+   printf("\nNow enter a element one by one \n");
+   for(i=0; i<n; i++)
+   {
+       scanf("%d\n", &arr[i]);
+   }
+   
+   printf("\nBefore Sorting element are\n");
+   printArray(arr);
+   
+   printf("\nAfter sorting element are\n");
+   sortingArray(arr);
+}
+
+void printArray(int arr[])
+{
+    int i;
+    for(i=0; i<n; i++)
+    {
+        printf("%d\n",arr[i]);
+    }
+}
+
+void sortingArray(int arr[])
+{
+    int i,j,temp=0;
+    for(i=0; i<n; i++)
+    {
+    	for(j=i+1; j<n; j++)
+    	{
+		
+           	if(arr[i] > arr[j])
+    		{
+    			temp = arr[i];
+    			arr[i] = arr[j];
+    			arr[j] = temp;
+			}
+    	}
+	}
+    
+    for(i=0; i<n; i++)
+    {
+    	printf("%d\n",arr[i]);
+	}
+}
 
 
 
