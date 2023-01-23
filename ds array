@@ -198,5 +198,71 @@ void printArray(int parr[])
     }
 }
   
- 
+
+//DELATETION AT GIVENE POSTION IN ARRAY
+
+#include<stdio.h>
+#define SIZE 100
+void printArray(int []);
+int delateelement(int [],int);
+int n;
+int main()
+{
+    int arr[SIZE],i,delate,index;
+    
+    printf("\nHow many element you want to store in array : ");
+    scanf("%d", &n);
+    printf("\nEnter a element  to one by one \n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("\nBefore delatetion element are\n");
+    printArray(arr);
+    printf("\nEnter a index number to delate the element : ");
+    scanf("%d", &index);
+    
+    delate = delateelement(arr,index);
+    
+    if(delate == 1)
+    {
+        printf("\nDelatetion element successfully\n");
+        printf("After delatetion element are\n");
+        printArray(arr);
+    }
+    else
+    {
+        printf("\nArray is full");
+    }
+    
+}
+
+void printArray(int arr[])
+{
+   int i;
+   for(i=0; i<n; i++)
+   {
+       printf("%d\n",arr[i]);
+   }
+}
+
+int delateelement(int arr[], int index)
+{
+    int i;
+    for(i=index; i<n; i++)
+    {
+        arr[i] = arr[i+1];
+    }
+    n--;
+    return(1);
+}
+
+
+
+
+
+
+
+
+
  
