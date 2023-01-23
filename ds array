@@ -1,0 +1,202 @@
+ 
+//insertiopn at beginning in array
+#include<stdio.h>
+#define SIZE  100
+int tot;
+
+int main()
+{
+	void printarray(int []);
+	int insertAtbeginning(int [], int);
+	int i,arr[SIZE],newvalue,addedvalue;
+	printf("\nHow many elements you want to store in array: ");
+	scanf("%d", &tot);
+	printf("\nEnter a Elements in one by one \n");
+	for(i=0; i<tot; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	
+	printf("\nBefore insertion elements are\n");
+	printarray(arr);
+	
+	printf("\nEnter a value to insert at beginning\n");
+	scanf("%d", &newvalue);
+	
+	addedvalue = insertAtbeginning(arr , newvalue);
+	
+	if(addedvalue == 1)
+	{
+		printf("\nElement added successfully");
+		printf("\nAfter insertion element are \n");
+		printarray(arr);
+	}
+	else
+	{
+		printf("\nspace is not aviable in array");
+	}
+}
+
+void printarray(int parr[])
+{
+	int i;
+	for(i=0; i<tot; i++)
+	{
+		printf("%d\n",parr[i]);
+	}
+}
+  
+int insertAtbeginning(int arr[], int value)
+{
+	int i;
+	if(tot>=SIZE)
+	{
+		printf("\nArray is full");
+		return(0);
+	}
+    
+    for(i=tot; i>0;i--)
+    {
+    	arr[i] = arr[i-1];
+	}
+	arr[0] = value;
+	tot = tot+1;
+	return(1);
+}
+
+
+
+//insertion at last me in array
+#include <stdio.h>
+#define SIZE 100
+int n;
+void printArray(int []);
+int insertAtlast(int [], int);
+
+int main()
+{
+
+   
+   int arr[SIZE],i,newvalue,added;
+   
+   printf("How many element you want to store in array\n");
+   scanf("%d", &n);
+   
+   printf("Enter a element one by one\n");
+   for(i=0; i<n; i++)
+   {
+       scanf("%d", &arr[i]);
+   }
+   printf("\nBefore insertion element are\n");
+   printArray(arr);
+   
+   printf("\nEnter a value to insert last : ");
+   scanf("%d", &newvalue);
+   added = insertAtlast(arr, newvalue);
+   
+   if(added == 1)
+   {
+       printf("\nElement added successfully\n");
+       printf("After insertion  element are\n ");
+       printArray(arr);
+   }
+   else
+   {
+       printf("\nArray is full");
+   }
+}
+
+int insertAtlast(int arr[], int value)
+{
+    if(n>=SIZE)
+    {
+        return(0);
+    }
+    
+    arr[n] = value;
+    n = n + 1;
+    return(1);
+}
+
+void printArray(int parr[])
+{
+    int i;
+    for(i=0; i<n; i++)
+    {
+        printf("%d\n",parr[i]);
+    }
+}
+
+
+
+//insertion at given position in array
+#include <stdio.h>
+#define SIZE 100
+int n;
+void printArray(int []);
+int insertAtlast(int [], int,int);
+
+int main()
+{
+
+   
+   int arr[SIZE],i,newvalue,added,index;
+   
+   printf("How many element you want to store in array\n");
+   scanf("%d", &n);
+   
+   printf("Enter a element one by one\n");
+   for(i=0; i<n; i++)
+   {
+       scanf("%d", &arr[i]);
+   }
+   printf("\nBefore insertion element are\n");
+   printArray(arr);
+   
+   printf("\nEnter a value to insert to given position : ");
+   scanf("%d", &newvalue);
+   printf("\nEnter a index number to store the element in array : ");
+   scanf("%d",&index);
+   added = insertAtlast(arr, newvalue,index);
+   
+   if(added == 1)
+   {
+       printf("\nElement added successfully\n");
+       printf("After insertion  element are\n ");
+       printArray(arr);
+   }
+   else
+   {
+       printf("\nArray is full");
+   }
+}
+
+int insertAtlast(int arr[], int value,int index)
+{
+    int i;
+    if(n>=SIZE)
+    {
+        return(0);
+    }
+    
+    for(i=n; i>index; i--)
+    {
+        arr[i] = arr[i-1];
+    }
+    arr[index] = value;
+    n++;
+    return(1);
+    
+}
+
+void printArray(int parr[])
+{
+    int i;
+    for(i=0; i<n; i++)
+    {
+        printf("%d\n",parr[i]);
+    }
+}
+  
+ 
+ 
