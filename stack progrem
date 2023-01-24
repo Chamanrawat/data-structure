@@ -1,0 +1,95 @@
+
+#include <stdio.h>
+#define SIZE 100
+#include<stdlib.h>
+
+void push();
+void pop();
+void display();
+
+int top = -1, arr[SIZE];
+
+int main()
+{
+   int choice;
+   
+   while(1)
+   {
+        printf("\nPerform operations on the stack:");
+        printf("\n1.Push the element\n2.Pop the element\n3.Show\n4.End");
+        printf("\n\nEnter the choice: ");
+        scanf("%d", &choice);
+        
+        switch(choice)
+        {
+            case 1:
+            push();
+            break;
+            
+            case 2:
+            pop();
+            break;
+            
+            case 3:
+            display();
+            break;
+            
+            case 4:
+            exit(0);
+            break;
+            
+            default:
+            printf("\nInvalid your choice");
+        }
+   }
+}
+
+void push()
+{
+    int x;
+    if(top == SIZE-1)
+    {
+        printf("\nArray is Overflow");
+    }
+    else
+    {
+        printf("\nEnter a number to store in stack : ");
+        scanf("%d", &x);
+         top= top+1;
+         arr[top] = x;
+    }
+}
+void pop()
+{
+     if(top == -1)
+     {
+         printf("\nUnderflow");
+     }
+     else
+     {
+         printf("\nPopped element : %d",arr[top]);
+         top = top-1;
+     }
+}
+
+void display()
+{
+    int i;
+    if(top == -1)
+    {
+        printf("\nUnderflow");
+    }
+    else
+    {
+        printf("\nElement in stack\n");
+        for(i=top; i>=0; i--)
+        {
+            printf("%d\n",arr[i]);
+        }
+    }
+}
+
+
+
+
+
