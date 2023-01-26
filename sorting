@@ -1,0 +1,53 @@
+#include<stdio.h>
+#define SIZE 100
+void selaction_sort(int [],int);
+int n;
+void main()
+{
+    int arr[SIZE],i;
+    printf("How many element you want to store on array : ");
+    scanf("%d", &n);
+    printf("\nNow enter a elements one by one\n");
+    
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("\nBefore sorted elements\n");
+    for(i=0; i<n; i++)
+        printf("%d\n",arr[i]);
+        
+    selaction_sort(arr , n);
+    printf("\nAfter sorted elements\n");
+    for(i=0; i<n; i++)
+        printf("%d\n",arr[i]);   
+}
+
+void selaction_sort(int arr[], int n)
+{
+    int i,j,max=0,temp;
+    for(i=0; i<n; i++)
+    {
+        max=i;
+        for(j=i; j<n; j++)
+        {
+            if(arr[max] > arr[j])
+            {
+                max = j;
+            }
+        }
+        
+        temp = arr[i];
+        arr[i] = arr[max];
+        arr[max] = temp;
+    }
+}
+
+
+
+
+
+
+
+
+
